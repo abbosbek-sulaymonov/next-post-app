@@ -6,20 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node scripts/seed.js",
+    "create-indexes": "node scripts/create-indexes.js",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
-    "graphql": "^16.5.0",
+    "@apollo/server": "^5.2.0",
+    "@as-integrations/next": "^4.1.0",
+    "graphql": "^16.12.0",
     "graphql-request": "^4.2.0",
+    "graphql-tag": "^2.12.6",
     "html-parser": "^0.11.0",
     "moment": "^2.29.3",
+    "mongodb": "^7.0.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-query": "^3.39.3",
     "sass": "^1.51.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.4",
     "autoprefixer": "^10.4.7",
+    "critters": "^0.0.23",
+    "dotenv": "^17.2.3",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",

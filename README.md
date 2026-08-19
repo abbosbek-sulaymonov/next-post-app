@@ -106,6 +106,7 @@ npm run seed
 ```
 
 This will create:
+
 - 6 sample blog posts
 - 5 categories (Technology, Design, Programming, Web Development, AI & Machine Learning)
 - 3 authors
@@ -119,6 +120,7 @@ npm run create-indexes
 ```
 
 This creates indexes on:
+
 - Post slugs (unique)
 - Created dates
 - Category slugs
@@ -213,17 +215,13 @@ Access the GraphQL Playground at [http://localhost:3000/api/graphql](http://loca
 type Query {
   # Get all posts with pagination
   postsConnection: PostsConnection!
-  
+
   # Get posts with filters
-  posts(
-    orderBy: String
-    last: Int
-    where: PostWhereInput
-  ): [Post!]!
-  
+  posts(orderBy: String, last: Int, where: PostWhereInput): [Post!]!
+
   # Get single post by slug
   post(slug: String!): Post
-  
+
   # Get all categories
   categories: [Category!]!
 }
@@ -234,11 +232,7 @@ type Query {
 ```graphql
 type Mutation {
   # Create a new post
-  createPost(
-    title: String!
-    slug: String!
-    shortPost: String
-  ): Post!
+  createPost(title: String!, slug: String!, shortPost: String): Post!
 }
 ```
 
@@ -338,11 +332,7 @@ query GetPost($slug: String!) {
 
 ```graphql
 query GetPostsByCategory($categorySlug: [String!]) {
-  posts(
-    where: {
-      categories_some: { slug_in: $categorySlug }
-    }
-  ) {
+  posts(where: { categories_some: { slug_in: $categorySlug } }) {
     title
     slug
     shortPost
@@ -353,16 +343,16 @@ query GetPostsByCategory($categorySlug: [String!]) {
 
 ## 📜 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build production bundle |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run seed` | Seed database with sample data |
-| `npm run create-indexes` | Create database indexes |
-| `npm run test-db` | Test MongoDB connection |
-| `npm run analyze` | Analyze bundle size |
+| Command                  | Description                    |
+| ------------------------ | ------------------------------ |
+| `npm run dev`            | Start development server       |
+| `npm run build`          | Build production bundle        |
+| `npm run start`          | Start production server        |
+| `npm run lint`           | Run ESLint                     |
+| `npm run seed`           | Seed database with sample data |
+| `npm run create-indexes` | Create database indexes        |
+| `npm run test-db`        | Test MongoDB connection        |
+| `npm run analyze`        | Analyze bundle size            |
 
 ## ⚡ Performance Optimizations
 
@@ -396,6 +386,7 @@ query GetPostsByCategory($categorySlug: [String!]) {
 ### Performance Metrics
 
 After optimizations:
+
 - ⚡ **Build Time**: 30-50% faster
 - 🚀 **Page Load**: 40-60% faster
 - 📦 **Bundle Size**: 20-30% smaller
@@ -437,6 +428,7 @@ NEXT_PUBLIC_GRAPHCMS_ENDPOINT=https://yourdomain.com/api/graphql
 ## 🛠 Technologies Used
 
 ### Frontend
+
 - **Next.js 12.1.6** - React framework
 - **React 18.1.0** - UI library
 - **TailwindCSS 3.0.24** - Utility-first CSS
@@ -444,11 +436,13 @@ NEXT_PUBLIC_GRAPHCMS_ENDPOINT=https://yourdomain.com/api/graphql
 - **React Query** - Data fetching and caching
 
 ### Backend
+
 - **MongoDB 7.0.0** - NoSQL database
 - **Apollo Server** - GraphQL server
 - **GraphQL** - Query language
 
 ### Development Tools
+
 - **ESLint** - Code linting
 - **PostCSS** - CSS processing
 - **Autoprefixer** - CSS vendor prefixes
@@ -526,8 +520,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Abbosbek Sulaymonov**
+
 - Full-stack developer specializing in React, Next.js, TypeScript, and MongoDB
-- GitHub: [@Abbosbek](https://github.com/Abbosbek-cloud)
+- GitHub: [@Abbosbek](https://github.com/abbosbek-sulaymonov)
 - Website: [abbosbek.uz](https://abbosbek.uz)
 
 ## 🙏 Acknowledgments
@@ -543,7 +538,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you have any questions or need help, please:
 
 1. Check the [documentation](#table-of-contents)
-2. Open an [issue](https://github.com/abbosbek-cloud/next-post-app/issues)
+2. Open an [issue](https://github.com/abbosbek-sulaymonov/next-post-app/issues)
 3. Contact me directly
 
 ## 🗺 Roadmap
@@ -560,7 +555,6 @@ Future enhancements planned:
 - [ ] Dark mode support
 - [ ] Multi-language support
 - [ ] Analytics integration
-
 
 ---
 
